@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "11601B958D2089CDC00DFDD2DED476DDEDD2BED2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "9B4810A572B0BCFCB6B8728DD3A5B64B436CFF12" : 0,
+    "11601B958D2089CDC00DFDD2DED476DDEDD2BED2" : 0,
+    "DB5CEF6D5CEA5366E1DEEBA061002B979256E09A" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DA1FD6C7-391F-462C-B029-C2E12B25F5C3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "9B4810A572B0BCFCB6B8728DD3A5B64B436CFF12" : "",
+    "11601B958D2089CDC00DFDD2DED476DDEDD2BED2" : "Lookup\/",
+    "DB5CEF6D5CEA5366E1DEEBA061002B979256E09A" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Lookup",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Lookup.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ChrisAU\/LookupProtocol.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "11601B958D2089CDC00DFDD2DED476DDEDD2BED2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ChrisAU\/AnagramDictionary.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9B4810A572B0BCFCB6B8728DD3A5B64B436CFF12"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ChrisAU\/Locution.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DB5CEF6D5CEA5366E1DEEBA061002B979256E09A"
+    }
+  ]
+}
