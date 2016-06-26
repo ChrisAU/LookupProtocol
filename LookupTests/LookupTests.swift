@@ -9,6 +9,26 @@
 import XCTest
 @testable import Lookup
 
+internal func hashValue(word: String) -> String {
+    return String(word.characters.sort())
+}
+
+internal func hashValue(characters: [Character]) -> String {
+    return String(characters.sort())
+}
+
+struct FakeDictionary: Lookup {
+    let words: Words
+    
+    subscript(letters: [Character]) -> Anagrams? {
+        return words[hashValue(letters)]
+    }
+    
+    func lookup(word: String) -> Bool {
+        return self[hashValue(word)]?.contains(word) ?? false
+    }
+}
+
 class LookupTests: XCTestCase {
     
     override func setUp() {
@@ -21,16 +41,45 @@ class LookupTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testLookupSucceeds() {
+        let words = ["aprt": ["part", "trap"]]
+        let dict = FakeDictionary(words: words)
+        XCTAssertTrue(dict.lookup("trap"))
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+    func testLookupFailsHash() {
+        let words = ["aprt": ["part", "trap"]]
+        let dict = FakeDictionary(words: words)
+        XCTAssertFalse(dict.lookup("rapt"))
     }
     
+    func testLookupFails() {
+        let words = ["aprt": ["part", "trap"]]
+        let dict = FakeDictionary(words: words)
+        XCTAssertFalse(dict.lookup("fake"))
+    }
+    
+    func testAnagramsSucceeds() {
+        let words = ["aprt": ["part", "trap"]]
+        let dict = FakeDictionary(words: words)
+        XCTAssertEqual(dict["trap"]!, ["part", "trap"])
+    }
+    
+    func testAnagramsFails() {
+        let words = ["aprt": ["part", "trap"]]
+        let dict = FakeDictionary(words: words)
+        XCTAssertNil(dict["fake"])
+    }
+    
+    func testAnagramsWithFixedLettersSucceeds() {
+        let words = ["aprt": ["part", "trap"]]
+        let dict = FakeDictionary(words: words)
+        XCTAssertEqual(dict["trap", [0: "p"]]!, ["part"])
+    }
+    
+    func testAnagramsWithFixedLettersFails() {
+        let words = ["aprt": ["part", "trap"]]
+        let dict = FakeDictionary(words: words)
+        XCTAssertEqual(dict["trap", [3: "r"]]!, [])
+    }
 }
