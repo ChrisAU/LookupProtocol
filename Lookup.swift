@@ -39,7 +39,7 @@ public extension Lookup {
     public subscript(letters: String, fixedLetters: FixedLetters) -> Anagrams? {
         return self[Array(letters.characters), fixedLetters]
     }
-    public subscript(letters: [Character], fixedLetters: [Int: Character]) -> Anagrams? {
+    public subscript(letters: [Character], fixedLetters: FixedLetters) -> Anagrams? {
         return self[letters]?.filter({ word in
             var remainingForWord = letters
             for (index, char) in Array(word.characters).enumerate() {
