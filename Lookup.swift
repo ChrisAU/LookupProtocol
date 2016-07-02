@@ -29,7 +29,7 @@ public protocol Lookup {
     subscript(letters: [Character], fixedLetters: FixedLetters) -> Anagrams? { get }
     /// - parameter word: Word to check validity of.
     /// - returns: True if word is valid.
-    func lookup(word: String) -> Bool
+    func lookup(_ word: String) -> Bool
 }
 
 public extension Lookup {
@@ -42,13 +42,13 @@ public extension Lookup {
     public subscript(letters: [Character], fixedLetters: FixedLetters) -> Anagrams? {
         return self[letters]?.filter({ word in
             var remainingForWord = letters
-            for (index, char) in Array(word.characters).enumerate() {
+            for (index, char) in Array(word.characters).enumerated() {
                 if let fixed = fixedLetters[index] where char != fixed {
                     return false
                 }
-                if let firstIndex = remainingForWord.indexOf(char) {
+                if let firstIndex = remainingForWord.index(of: char) {
                     // Remove from pool, word still appears to be valid
-                    remainingForWord.removeAtIndex(firstIndex)
+                    remainingForWord.remove(at: firstIndex)
                 } else {
                     // We ran out of viable letters for this word
                     return false

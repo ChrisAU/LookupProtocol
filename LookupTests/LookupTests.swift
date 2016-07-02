@@ -9,12 +9,12 @@
 import XCTest
 @testable import Lookup
 
-internal func hashValue(word: String) -> String {
-    return String(word.characters.sort())
+internal func hashValue(_ word: String) -> String {
+    return String(word.characters.sorted())
 }
 
-internal func hashValue(characters: [Character]) -> String {
-    return String(characters.sort())
+internal func hashValue(_ characters: [Character]) -> String {
+    return String(characters.sorted())
 }
 
 struct FakeDictionary: Lookup {
@@ -24,7 +24,7 @@ struct FakeDictionary: Lookup {
         return words[hashValue(letters)]
     }
     
-    func lookup(word: String) -> Bool {
+    func lookup(_ word: String) -> Bool {
         return self[hashValue(word)]?.contains(word) ?? false
     }
 }
