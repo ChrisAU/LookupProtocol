@@ -29,7 +29,7 @@ public protocol Lookup {
     subscript(letters: [Character], fixedLetters: FixedLetters) -> Anagrams? { get }
     /// - parameter word: Word to check validity of.
     /// - returns: True if word is valid.
-    func lookup(_ word: String) -> Bool
+    func lookup(word: String) -> Bool
 }
 
 public extension Lookup {
