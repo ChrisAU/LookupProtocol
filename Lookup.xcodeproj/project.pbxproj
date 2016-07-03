@@ -155,6 +155,7 @@
 				TargetAttributes = {
 					99127A921D1FC082009DCF7A = {
 						CreatedOnToolsVersion = 7.3;
+						ProvisioningStyle = Manual;
 					};
 					99127A9C1D1FC082009DCF7A = {
 						CreatedOnToolsVersion = 7.3;
